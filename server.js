@@ -19,9 +19,7 @@ app.get('/', (req, res) => {
 app.get('/stat', (req, res) => {
   try {
     let data = fs.readFileSync('counter.txt', 'utf8')
-    console.log(data)
     data = (++data).toString()
-    console.log(data)
     fs.writeFileSync('counter.txt', data)
     res.send(data)
   } catch (err) {
